@@ -1,0 +1,28 @@
+
+function piResponse() {
+		piSetCookie('visitor_id120942', '415661203', 3650);
+			piSetCookie('visitor_id120942-hash', '55feaf85dc7ce3106628b0e60df0d8ca84e012bfa93b7b121e9e42e53fee01e0342c4e407b0a03a1589058238f4621d2dfbf807e', 3650);
+		
+		if (document.location.protocol != "https:" || (document.location.protocol == "https:" && true)) {
+		var analytics_link = document.location.protocol + "//" + "connect.wri.org/analytics?";
+		pi.tracker.visitor_id='415661203';
+
+				pi.tracker.visitor_id_sign='55feaf85dc7ce3106628b0e60df0d8ca84e012bfa93b7b121e9e42e53fee01e0342c4e407b0a03a1589058238f4621d2dfbf807e';
+		
+		var variables = 'conly=true';
+		for (property in pi.tracker) {
+					variables += "&" + property + "=" + encodeURIComponent(pi.tracker[property]);
+				}
+		var headID = document.getElementsByTagName("head")[0];
+		piScriptObj[piScriptNum] = document.createElement('script');
+		piScriptObj[piScriptNum].type = 'text/javascript';
+		piScriptObj[piScriptNum].src = analytics_link + variables;
+		headID.appendChild(piScriptObj[piScriptNum]);
+		piScriptObj[piScriptNum].onload = function() { return; }
+	}
+	}
+piResponse();
+
+
+
+
